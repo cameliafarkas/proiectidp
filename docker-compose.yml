@@ -1,0 +1,21 @@
+version: '3'
+services:
+  database:
+    build: ./database/
+    container_name: database
+    volumes:
+     - ./volume:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: testuser
+      MYSQL_PASSWORD: testpassword
+#      MYSQL_DATABASE: flights
+    ports:
+      - '3306:3306'
+    networks:
+      - application_network
+networks:
+  application_network:
+    driver: bridge
+volumes:
+  volume:
