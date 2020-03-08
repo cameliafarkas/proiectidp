@@ -1,0 +1,12 @@
+version: '3'
+services:
+  backend:
+    image: cameliafarkas/proiectidp:proiect
+    container_name: backend
+    ports:
+      - "5000:5000"
+    networks:
+      - application_network
+networks:
+  application_network:
+    driver: bridge
