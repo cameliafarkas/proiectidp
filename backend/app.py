@@ -9,6 +9,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     my_string = "Professional Hair Shop"
+    print("idk")
     return render_template("index.html", body=my_string)
 
 @app.route('/products')
